@@ -1,7 +1,6 @@
 import React from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import style from './styles/like';
 
 class LikeButton extends React.Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class LikeButton extends React.Component {
   render() {
     return (
       <button 
-        css={[style, this.props.styles]}
+        css={this.props.styles}
         onClick={
           () => this.setState({
             liked: !this.state.liked

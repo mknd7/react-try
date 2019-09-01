@@ -32527,32 +32527,7 @@ var ClassNames = withEmotionCache(function (props, context) {
   });
 });
 exports.ClassNames = ClassNames;
-},{"@babel/runtime/helpers/inheritsLoose":"../node_modules/@emotion/core/node_modules/@babel/runtime/helpers/inheritsLoose.js","react":"../node_modules/react/index.js","@emotion/cache":"../node_modules/@emotion/cache/dist/cache.browser.esm.js","@emotion/utils":"../node_modules/@emotion/utils/dist/utils.browser.esm.js","@emotion/serialize":"../node_modules/@emotion/serialize/dist/serialize.browser.esm.js","@emotion/sheet":"../node_modules/@emotion/sheet/dist/sheet.browser.esm.js","@emotion/css":"../node_modules/@emotion/css/dist/css.browser.esm.js"}],"components/styles/like.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _core = require("@emotion/core");
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 60px;\n  height: 20px;\n  background-color: #eee;\n  border: 1px solid #bbb;\n  border-radius: 3px;\n\n  :active {\n    background-color: #ccc;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var likeStyles = (0, _core.css)(_templateObject());
-var _default = likeStyles;
-exports.default = _default;
-},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js"}],"components/likebutton.jsx":[function(require,module,exports) {
+},{"@babel/runtime/helpers/inheritsLoose":"../node_modules/@emotion/core/node_modules/@babel/runtime/helpers/inheritsLoose.js","react":"../node_modules/react/index.js","@emotion/cache":"../node_modules/@emotion/cache/dist/cache.browser.esm.js","@emotion/utils":"../node_modules/@emotion/utils/dist/utils.browser.esm.js","@emotion/serialize":"../node_modules/@emotion/serialize/dist/serialize.browser.esm.js","@emotion/sheet":"../node_modules/@emotion/sheet/dist/sheet.browser.esm.js","@emotion/css":"../node_modules/@emotion/css/dist/css.browser.esm.js"}],"components/likebutton.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32563,8 +32538,6 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _core = require("@emotion/core");
-
-var _like = _interopRequireDefault(require("./styles/like"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32609,7 +32582,7 @@ function (_React$Component) {
       var _this2 = this;
 
       return (0, _core.jsx)("button", {
-        css: [_like.default, this.props.styles],
+        css: this.props.styles,
         onClick: function onClick() {
           return _this2.setState({
             liked: !_this2.state.liked
@@ -32624,7 +32597,7 @@ function (_React$Component) {
 
 var _default = LikeButton;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./styles/like":"components/styles/like.js"}],"components/styles/digiclock.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js"}],"components/styles/digiclock.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32635,7 +32608,7 @@ exports.default = void 0;
 var _core = require("@emotion/core");
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    display: inline-block;\n    padding: 10px;\n    box-shadow: 0 0 4px 0 rgba(0,0,0,0.6);\n    border-radius: 6px;\n    font-size: 30px;\n    letter-spacing: 2px;\n\n    > span {\n      vertical-align: middle;\n    }\n\n    > button {\n      margin-left: 20px;\n      width: 60px;\n      background-color: #eee;\n      border: 1px solid #bbb;\n      border-radius: 3px;\n      font-size: 14px;\n      vertical-align: middle;\n\n      :active {\n        background-color: #ccc;\n      }\n    }\n  "]);
+  var data = _taggedTemplateLiteral(["\n    display: inline-block;\n    padding: 10px;\n    box-shadow: 0 0 4px 0 rgba(0,0,0,0.6);\n    border-radius: 6px;\n    font-size: 30px;\n\n    > span {\n      vertical-align: middle;\n    }\n\n    > button {\n      margin-left: 20px;\n      vertical-align: middle;\n    }\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32796,7 +32769,7 @@ exports.default = void 0;
 var _core = require("@emotion/core");
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  * {\n    margin: 0;\n    padding: 0;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  body {\n    font-family: sans-serif;\n    line-height: 1.2;\n    margin: 40px;\n  }\n  button, input {\n    font: inherit;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  * {\n    margin: 0;\n    padding: 0;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  body {\n    font-family: sans-serif;\n    line-height: 1.2;\n    letter-spacing: 2px;\n    margin: 40px;\n  }\n  button, input {\n    font: inherit;\n  }\n\n  button {\n    padding: 4px;\n    width: 70px;\n    background-color: #eee;\n    border: 1px solid #bbb;\n    border-radius: 3px;\n    font-size: 16px;\n\n    :active {\n      background-color: #ccc;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32896,7 +32869,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55746" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56110" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
