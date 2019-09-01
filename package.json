@@ -1,0 +1,24 @@
+{
+  "name": "react-test",
+  "version": "1.0.0",
+  "description": "Trying out React, with Emotion for styling",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mukund Vijayaraghavan",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/core": "^10.0.17",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
