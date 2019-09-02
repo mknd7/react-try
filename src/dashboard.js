@@ -13,7 +13,7 @@ function Dashboard() {
       <LikeButton styles={css
         `
           display: block;
-          margin: 20px;
+          margin-bottom: 20px;
         `}
       />
       <DigiClock />

@@ -15,9 +15,10 @@ class LikeButton extends React.Component {
       <button 
         css={this.props.styles}
         onClick={
-          () => this.setState({
-            liked: !this.state.liked
-          })}
+          () => this.setState(state => ({
+            liked: !state.liked
+          }))
+        }
       >
         {(this.state.liked) ? 'Unlike' : 'Like'}
       </button>

@@ -32584,8 +32584,10 @@ function (_React$Component) {
       return (0, _core.jsx)("button", {
         css: this.props.styles,
         onClick: function onClick() {
-          return _this2.setState({
-            liked: !_this2.state.liked
+          return _this2.setState(function (state) {
+            return {
+              liked: !state.liked
+            };
           });
         }
       }, this.state.liked ? 'Unlike' : 'Like');
@@ -32718,8 +32720,10 @@ function (_React$Component) {
         this.startInterval();
       }
 
-      this.setState({
-        paused: !this.state.paused
+      this.setState(function (state) {
+        return {
+          paused: !state.paused
+        };
       });
     }
   }, {
@@ -32729,8 +32733,10 @@ function (_React$Component) {
         this.handlePause();
       }
 
-      this.setState({
-        showGMT: !this.state.showGMT
+      this.setState(function (state) {
+        return {
+          showGMT: !state.showGMT
+        };
       });
     }
   }, {
@@ -32804,7 +32810,7 @@ var _global = _interopRequireDefault(require("./components/styles/global"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n          display: block;\n          margin: 20px;\n        "]);
+  var data = _taggedTemplateLiteral(["\n          display: block;\n          margin-bottom: 20px;\n        "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32869,7 +32875,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56110" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56837" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

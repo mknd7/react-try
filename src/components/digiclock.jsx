@@ -45,16 +45,16 @@ class DigiClock extends React.Component {
     } else {
       this.startInterval();
     }
-    this.setState({
-      paused: !this.state.paused
-    });
+    this.setState(state => ({
+      paused: !state.paused
+    }));
   }
 
   handleGMT() {
     if(this.state.paused) { this.handlePause(); }
-    this.setState({
-      showGMT: !this.state.showGMT
-    });
+    this.setState(state => ({
+      showGMT: !state.showGMT
+    }));
   }
 
   render() {
