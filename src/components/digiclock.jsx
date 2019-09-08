@@ -1,6 +1,6 @@
 import React from 'react';
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 import styles from './styles/digiclock';
 
 class DigiClock extends React.Component {
@@ -12,6 +12,9 @@ class DigiClock extends React.Component {
       paused: false,
       showGMT: false
     };
+
+    this.handlePause = this.handlePause.bind(this);
+    this.handleGMT = this.handleGMT.bind(this);
   }
 
   getCurrentTime() {
@@ -58,18 +61,22 @@ class DigiClock extends React.Component {
   }
 
   render() {
-    let time = this.state.time;
+    const time = this.state.time;
     return (
-      <div css={styles.wrapper}>
+      <div css={css
+        `
+          ${this.props.styles}
+          ${styles.wrapper}
+        `}>
         <span>{time.hours}</span>
         :
         <span>{time.minutes}</span>
         :
         <span>{time.seconds}</span>
-        <button onClick={() => this.handlePause()}>
+        <button onClick={this.handlePause}>
           {this.state.paused ? 'Reset' : 'Pause'}
         </button>
-        <button onClick={() => this.handleGMT()}>
+        <button onClick={this.handleGMT}>
           {this.state.showGMT ? 'Show Local time' : 'Show GMT time'}
         </button>
       </div>

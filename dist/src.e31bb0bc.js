@@ -32527,7 +32527,32 @@ var ClassNames = withEmotionCache(function (props, context) {
   });
 });
 exports.ClassNames = ClassNames;
-},{"@babel/runtime/helpers/inheritsLoose":"../node_modules/@emotion/core/node_modules/@babel/runtime/helpers/inheritsLoose.js","react":"../node_modules/react/index.js","@emotion/cache":"../node_modules/@emotion/cache/dist/cache.browser.esm.js","@emotion/utils":"../node_modules/@emotion/utils/dist/utils.browser.esm.js","@emotion/serialize":"../node_modules/@emotion/serialize/dist/serialize.browser.esm.js","@emotion/sheet":"../node_modules/@emotion/sheet/dist/sheet.browser.esm.js","@emotion/css":"../node_modules/@emotion/css/dist/css.browser.esm.js"}],"components/likebutton.jsx":[function(require,module,exports) {
+},{"@babel/runtime/helpers/inheritsLoose":"../node_modules/@emotion/core/node_modules/@babel/runtime/helpers/inheritsLoose.js","react":"../node_modules/react/index.js","@emotion/cache":"../node_modules/@emotion/cache/dist/cache.browser.esm.js","@emotion/utils":"../node_modules/@emotion/utils/dist/utils.browser.esm.js","@emotion/serialize":"../node_modules/@emotion/serialize/dist/serialize.browser.esm.js","@emotion/sheet":"../node_modules/@emotion/sheet/dist/sheet.browser.esm.js","@emotion/css":"../node_modules/@emotion/css/dist/css.browser.esm.js"}],"components/styles/global.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _core = require("@emotion/core");
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  * {\n    margin: 0;\n    padding: 0;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  body {\n    font-family: sans-serif;\n    line-height: 1.2;\n    letter-spacing: 2px;\n    margin: 40px;\n  }\n  button, input {\n    font: inherit;\n  }\n\n  button {\n    padding: 4px;\n    width: 70px;\n    background-color: #eee;\n    border: 1px solid #bbb;\n    border-radius: 3px;\n    font-size: 16px;\n\n    :active {\n      background-color: #ccc;\n    }\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var globalStyles = (0, _core.css)(_templateObject());
+var _default = globalStyles;
+exports.default = _default;
+},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js"}],"components/likebutton.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32644,6 +32669,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n          ", "\n          ", "\n        "]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -32652,9 +32689,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -32676,6 +32713,8 @@ function (_React$Component) {
       paused: false,
       showGMT: false
     };
+    _this.handlePause = _this.handlePause.bind(_assertThisInitialized(_this));
+    _this.handleGMT = _this.handleGMT.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -32742,19 +32781,13 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
       var time = this.state.time;
       return (0, _core.jsx)("div", {
-        css: _digiclock.default.wrapper
+        css: (0, _core.css)(_templateObject(), this.props.styles, _digiclock.default.wrapper)
       }, (0, _core.jsx)("span", null, time.hours), ":", (0, _core.jsx)("span", null, time.minutes), ":", (0, _core.jsx)("span", null, time.seconds), (0, _core.jsx)("button", {
-        onClick: function onClick() {
-          return _this3.handlePause();
-        }
+        onClick: this.handlePause
       }, this.state.paused ? 'Reset' : 'Pause'), (0, _core.jsx)("button", {
-        onClick: function onClick() {
-          return _this3.handleGMT();
-        }
+        onClick: this.handleGMT
       }, this.state.showGMT ? 'Show Local time' : 'Show GMT time'));
     }
   }]);
@@ -32764,7 +32797,7 @@ function (_React$Component) {
 
 var _default = DigiClock;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./styles/digiclock":"components/styles/digiclock.js"}],"components/styles/global.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./styles/digiclock":"components/styles/digiclock.js"}],"components/styles/togglegroup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32774,8 +32807,38 @@ exports.default = void 0;
 
 var _core = require("@emotion/core");
 
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    left: 36px;\n    background-color: #62aacc;\n  "]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    left: 4px;\n    background-color: #fff;\n  "]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    display: inline-block;\n    width: 60px;\n    height: 28px;\n    background-color: #ddd;\n    border: 1px solid #bbb;\n    border-radius: 14px;\n    position: relative;\n    cursor: pointer;\n\n    > span {\n      position: absolute;\n      top: 3px;\n      width: 18px;\n      height: 18px;\n      border-radius: 50%;\n      box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.5);\n      transition: 0.2s;\n    }\n\n    &.disabled {\n      cursor: not-allowed;\n      opacity: 0.4;\n    }\n  "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  * {\n    margin: 0;\n    padding: 0;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  }\n  body {\n    font-family: sans-serif;\n    line-height: 1.2;\n    letter-spacing: 2px;\n    margin: 40px;\n  }\n  button, input {\n    font: inherit;\n  }\n\n  button {\n    padding: 4px;\n    width: 70px;\n    background-color: #eee;\n    border: 1px solid #bbb;\n    border-radius: 3px;\n    font-size: 16px;\n\n    :active {\n      background-color: #ccc;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n    margin-bottom: 10px;\n    > * { vertical-align: middle; }\n\n    > label {\n      display: inline-block;\n      font-size: 14px;\n      margin-right: 20px;\n    }\n  "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32786,10 +32849,15 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var globalStyles = (0, _core.css)(_templateObject());
-var _default = globalStyles;
+var toggleStyles = {
+  wrapper: (0, _core.css)(_templateObject()),
+  button: (0, _core.css)(_templateObject2()),
+  switchedOff: (0, _core.css)(_templateObject3()),
+  switchedOn: (0, _core.css)(_templateObject4())
+};
+var _default = toggleStyles;
 exports.default = _default;
-},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js"}],"dashboard.js":[function(require,module,exports) {
+},{"@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js"}],"components/togglegroup.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32801,13 +32869,120 @@ var _react = _interopRequireDefault(require("react"));
 
 var _core = require("@emotion/core");
 
+var _togglegroup = _interopRequireDefault(require("./styles/togglegroup"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var ToggleGroup =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ToggleGroup, _React$Component);
+
+  function ToggleGroup(props) {
+    var _this;
+
+    _classCallCheck(this, ToggleGroup);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ToggleGroup).call(this, props));
+    _this.state = {
+      onOrOff: false,
+      disabled: props.disabled || false,
+      label: props.label
+    };
+    return _this;
+  }
+
+  _createClass(ToggleGroup, [{
+    key: "toggleButton",
+    value: function toggleButton(props) {
+      return (0, _core.jsx)("div", {
+        css: _togglegroup.default.button,
+        onClick: props.onClick,
+        className: props.disabled ? 'disabled' : ''
+      }, (0, _core.jsx)("span", {
+        css: props.switch ? _togglegroup.default.switchedOn : _togglegroup.default.switchedOff
+      }));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var ToggleButton = this.toggleButton;
+      return (0, _core.jsx)("div", {
+        css: _togglegroup.default.wrapper
+      }, (0, _core.jsx)("label", null, this.state.label), (0, _core.jsx)(ToggleButton, {
+        switch: this.state.onOrOff,
+        onClick: function onClick() {
+          if (_this2.state.disabled) {
+            return;
+          }
+
+          _this2.setState(function (state) {
+            return {
+              onOrOff: !state.onOrOff
+            };
+          });
+        },
+        disabled: this.state.disabled
+      }));
+    }
+  }]);
+
+  return ToggleGroup;
+}(_react.default.Component);
+
+var _default = ToggleGroup;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./styles/togglegroup":"components/styles/togglegroup.js"}],"dashboard.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _core = require("@emotion/core");
+
+var _global = _interopRequireDefault(require("./components/styles/global"));
+
 var _likebutton = _interopRequireDefault(require("./components/likebutton"));
 
 var _digiclock = _interopRequireDefault(require("./components/digiclock"));
 
-var _global = _interopRequireDefault(require("./components/styles/global"));
+var _togglegroup = _interopRequireDefault(require("./components/togglegroup"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n          margin-bottom: 30px;\n        "]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject() {
   var data = _taggedTemplateLiteral(["\n          display: block;\n          margin-bottom: 20px;\n        "]);
@@ -32822,18 +32997,25 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function Dashboard() {
-  return (0, _core.jsx)("div", {
+  return _react.default.createElement("div", {
     id: "dashboard"
-  }, (0, _core.jsx)(_core.Global, {
+  }, _react.default.createElement(_core.Global, {
     styles: _global.default
-  }), (0, _core.jsx)(_likebutton.default, {
+  }), _react.default.createElement(_likebutton.default, {
     styles: (0, _core.css)(_templateObject())
-  }), (0, _core.jsx)(_digiclock.default, null));
+  }), _react.default.createElement(_digiclock.default, {
+    styles: (0, _core.css)(_templateObject2())
+  }), _react.default.createElement(_togglegroup.default, {
+    label: "Try this toggle!"
+  }), _react.default.createElement(_togglegroup.default, {
+    label: "This toggle is disabled",
+    disabled: true
+  }));
 }
 
 var _default = Dashboard;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./components/likebutton":"components/likebutton.jsx","./components/digiclock":"components/digiclock.jsx","./components/styles/global":"components/styles/global.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@emotion/core":"../node_modules/@emotion/core/dist/core.browser.esm.js","./components/styles/global":"components/styles/global.js","./components/likebutton":"components/likebutton.jsx","./components/digiclock":"components/digiclock.jsx","./components/togglegroup":"components/togglegroup.jsx"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -32875,7 +33057,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56837" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60180" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

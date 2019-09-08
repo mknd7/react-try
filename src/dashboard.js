@@ -1,10 +1,10 @@
 import React from 'react';
-/** @jsx jsx */
-import { Global, jsx, css } from '@emotion/core'
+import { Global, css } from '@emotion/core'
 
+import globalStyles from './components/styles/global';
 import LikeButton from './components/likebutton';
 import DigiClock from './components/digiclock';
-import globalStyles from './components/styles/global';
+import ToggleGroup from './components/togglegroup';
 
 function Dashboard() {
   return (
@@ -16,7 +16,13 @@ function Dashboard() {
           margin-bottom: 20px;
         `}
       />
-      <DigiClock />
+      <DigiClock styles={css
+        `
+          margin-bottom: 30px;
+        `
+      }/>
+      <ToggleGroup label="Try this toggle!"/>
+      <ToggleGroup label="This toggle is disabled" disabled={true}/>
     </div>
   );
 }
