@@ -32883,9 +32883,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -32907,6 +32907,7 @@ function (_React$Component) {
       disabled: props.disabled || false,
       label: props.label
     };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -32922,26 +32923,27 @@ function (_React$Component) {
       }));
     }
   }, {
+    key: "handleClick",
+    value: function handleClick() {
+      if (this.state.disabled) {
+        return;
+      }
+
+      this.setState(function (state) {
+        return {
+          onOrOff: !state.onOrOff
+        };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var ToggleButton = this.toggleButton;
       return (0, _core.jsx)("div", {
         css: _togglegroup.default.wrapper
       }, (0, _core.jsx)("label", null, this.state.label), (0, _core.jsx)(ToggleButton, {
         switch: this.state.onOrOff,
-        onClick: function onClick() {
-          if (_this2.state.disabled) {
-            return;
-          }
-
-          _this2.setState(function (state) {
-            return {
-              onOrOff: !state.onOrOff
-            };
-          });
-        },
+        onClick: this.handleClick,
         disabled: this.state.disabled
       }));
     }
@@ -33057,7 +33059,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60180" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60966" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

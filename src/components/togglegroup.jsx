@@ -12,6 +12,8 @@ class ToggleGroup extends React.Component {
       disabled: props.disabled || false,
       label: props.label
     }
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   toggleButton(props) {
@@ -22,21 +24,22 @@ class ToggleGroup extends React.Component {
     )
   }
 
+  handleClick() {
+    if(this.state.disabled) { return; }
+    this.setState(state => ({
+      onOrOff: !state.onOrOff
+    }));
+  }
+
   render() {
     const ToggleButton = this.toggleButton;
+
     return (
       <div css={styles.wrapper}>
         <label>{this.state.label}</label>
         <ToggleButton 
           switch={this.state.onOrOff}
-          onClick={
-            () => {
-              if(this.state.disabled) { return; }
-              this.setState(state => ({
-                onOrOff: !state.onOrOff
-              }))
-            }
-          }
+          onClick={this.handleClick}
           disabled={this.state.disabled}
         />
       </div>

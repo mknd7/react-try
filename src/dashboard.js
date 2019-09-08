@@ -22,7 +22,7 @@ function Dashboard() {
         `
       }/>
       <ToggleGroup label="Try this toggle!"/>
-      <ToggleGroup label="This toggle is disabled" disabled={true}/>
+      <ToggleGroup label="This toggle is disabled" disabled />
     </div>
   );
 }
