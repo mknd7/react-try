@@ -1,4 +1,3 @@
-This here is my first try with React, after going through a quick read from the official docs (upto chapter 6 probably).
+This here is my first try with React, after going through a quick read from the official docs.
 
-I've had experience with Emotion (CSS-in-JS) previously (although that was the framework-agnostic package; using React-specific @emotion/core now).
-Combined with the brilliant bundler Parcel, it came in useful for rapid styling and prototyping.
+The brilliant bundler Parcel and CSS-in-JS library Emotion (I have had experience with the framework-agnostic package previously; using the React-specific @emotion/core now) together allowed for rapid prototyping and styling.
